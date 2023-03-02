@@ -1,0 +1,67 @@
+@import 'color';
+
+%spacing {
+    border-radius: 5px;
+    padding-top: 5px;
+};
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    height:100vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 1.5fr 1.2fr 0.8fr;
+    grid-template-areas:'nav nav nav nav'
+                         'side main main main'
+                         'side content1 content2 content3'
+                         'side footer footer footer';
+    gap: 2px;
+        @media only screen and (max-width: 550px) {
+            display: grid;
+            grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-areas: 'nav''side''main''content1''content2''content3''footer';
+            gap:1px;
+        }
+
+        nav {
+            background-color: $bgcolor;
+            grid-area: nav;
+            @extend %spacing;
+        }
+        main {
+            background-color: $bghoverCol;
+            grid-area: main;
+            @extend %spacing;
+        }
+        .sidebar {
+            background-color: $darkbrown;
+            grid-area: side;
+            @extend %spacing;
+        }
+        .content1 {
+            background-color: $accentcolor;
+            grid-area: content1;
+            @extend %spacing;
+        }
+        .content2 {
+            background-color: $darkbrown;
+            grid-area: content2;
+            @extend %spacing;
+        }
+        .content3 {
+            background-color: $textcolor;
+            grid-area: content3;
+              @extend %spacing;
+        }
+        footer {
+            background-color: $discuss1bgColor;
+            grid-area: footer;
+              @extend %spacing;
+        }
+}

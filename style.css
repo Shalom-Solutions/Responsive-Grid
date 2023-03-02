@@ -1,0 +1,56 @@
+.container footer, .container .content3, .container .content2, .container .content1, .container .sidebar, .container main, .container nav {
+  border-radius: 5px;
+  padding-top: 5px;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 1.5fr 1.2fr 0.8fr;
+  grid-template-areas: "nav nav nav nav" "side main main main" "side content1 content2 content3" "side footer footer footer";
+  gap: 2px;
+}
+@media only screen and (max-width: 550px) {
+  .container {
+    display: grid;
+    grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: "nav" "side" "main" "content1" "content2" "content3" "footer";
+    gap: 1px;
+  }
+}
+.container nav {
+  background-color: #104a0d;
+  grid-area: nav;
+}
+.container main {
+  background-color: rgb(128, 128, 128);
+  grid-area: main;
+}
+.container .sidebar {
+  background-color: rgb(102, 77, 31);
+  grid-area: side;
+}
+.container .content1 {
+  background-color: #45871b;
+  grid-area: content1;
+}
+.container .content2 {
+  background-color: rgb(102, 77, 31);
+  grid-area: content2;
+}
+.container .content3 {
+  background-color: #E5FDCE;
+  grid-area: content3;
+}
+.container footer {
+  background-color: #d9efe3;
+  grid-area: footer;
+}/*# sourceMappingURL=style.css.map */
